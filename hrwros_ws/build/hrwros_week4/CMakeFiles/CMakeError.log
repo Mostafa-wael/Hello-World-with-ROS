@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/mostafa/hrwros_ws/build/hrwros_week4/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2636d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2636d.dir/build.make CMakeFiles/cmTC_2636d.dir/build
+make[1]: Entering directory '/home/mostafa/hrwros_ws/build/hrwros_week4/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2636d.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_2636d.dir/CheckSymbolExists.c.o   -c /home/mostafa/hrwros_ws/build/hrwros_week4/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_2636d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2636d.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_2636d.dir/CheckSymbolExists.c.o  -o cmTC_2636d 
+CMakeFiles/cmTC_2636d.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_2636d.dir/build.make:97: recipe for target 'cmTC_2636d' failed
+make[1]: *** [cmTC_2636d] Error 1
+make[1]: Leaving directory '/home/mostafa/hrwros_ws/build/hrwros_week4/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_2636d/fast' failed
+make: *** [cmTC_2636d/fast] Error 2
+
+File /home/mostafa/hrwros_ws/build/hrwros_week4/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/mostafa/hrwros_ws/build/hrwros_week4/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_83a7f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_83a7f.dir/build.make CMakeFiles/cmTC_83a7f.dir/build
+make[1]: Entering directory '/home/mostafa/hrwros_ws/build/hrwros_week4/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_83a7f.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_83a7f.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_83a7f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_83a7f.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_83a7f.dir/CheckFunctionExists.c.o  -o cmTC_83a7f -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_83a7f.dir/build.make:97: recipe for target 'cmTC_83a7f' failed
+make[1]: *** [cmTC_83a7f] Error 1
+make[1]: Leaving directory '/home/mostafa/hrwros_ws/build/hrwros_week4/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_83a7f/fast' failed
+make: *** [cmTC_83a7f/fast] Error 2
+
+
